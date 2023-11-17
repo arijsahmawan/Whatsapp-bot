@@ -3,13 +3,17 @@
 
 A simple Whatsapp bot with whiskeysockets/baileys framework.
 
+git clone :
+```
+git clone https://github.com/arijsahmawan/whatsapp-bot.git
+```
 Install the framework before running the code.
 
-Using npm
+Using npm :
 ```
 npm install whiskeysockets/baileys
 ```
-Using yarn
+Using yarn :
 ```
 yarn add whiskeysockets/baileys
 ```
