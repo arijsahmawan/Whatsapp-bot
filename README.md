@@ -4,10 +4,12 @@
 A simple Whatsapp bot with whiskeysockets/baileys framework.
 
 Install the framework before running the code.
+
+Using npm
 ```
 npm install whiskeysockets/baileys
 ```
-or
+Using yarn
 ```
 yarn add whiskeysockets/baileys
 ```
