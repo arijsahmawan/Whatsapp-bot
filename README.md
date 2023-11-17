@@ -1,4 +1,3 @@
-
 # Whatsapp bot
 
 A simple Whatsapp bot with [whiskeysockets/baileys](https://whiskeysockets.github.io/) framework.
@@ -7,7 +6,7 @@ git clone :
 ```
 git clone https://github.com/arijsahmawan/whatsapp-bot.git
 ```
-##Installation
+## Installation
 
 Install the framework before running the code.
 
