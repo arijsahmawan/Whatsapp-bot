@@ -2,13 +2,13 @@
 
 A simple Whatsapp bot with [whiskeysockets/baileys](https://whiskeysockets.github.io/) framework.
 
-git clone :
+## Installation
+
+1. Clone the repo
 ```
 git clone https://github.com/arijsahmawan/whatsapp-bot.git
 ```
-## Installation
-
-Install the framework before running the code.
+2. Install the framework
 
 Using npm :
 ```
@@ -18,6 +18,10 @@ Using yarn :
 ```
 yarn add whiskeysockets/baileys
 ```
+3. Enter your phone number in `phone_number.json`
+4. ```json
+   "pNumber": "ENTER YOUR PHONE NMBER"
+   ```
 ## Running
 
 ```
