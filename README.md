@@ -18,3 +18,12 @@ Using yarn :
 ```
 yarn add whiskeysockets/baileys
 ```
+## Running
+
+```
+node index.js
+```
+
+```
+node index.js --useCode
+```
