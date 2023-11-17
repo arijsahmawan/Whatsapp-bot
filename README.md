@@ -1,7 +1,7 @@
 
 # Whatsapp bot
 
-A simple Whatsapp bot with [whiskeysockets/baileys](https://whiskeysockets.github.io) framework.
+A simple Whatsapp bot with [whiskeysockets/baileys](https://whiskeysockets.github.io/) framework.
 
 git clone :
 ```
