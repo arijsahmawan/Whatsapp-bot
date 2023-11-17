@@ -41,8 +41,7 @@ async function connectToWhatsapp(){
 	console.log(msgs)
 	
 	const msgbody = msgType === 'conversation' ? msgs.message.conversation : msgType === 'extendedTextMessage' ? msgs.message.extendedTextMessage.text : msgType === 'imageMessage' ? msgs.message.imageMessage.caption : msgType === 'videoMessage' ? msgs.message.videoMessage.caption : null;
-	
-	
+		
 	switch(msgbody.split(' ')[0]){
 		case '.menu' :
 			reply('fitur masih dalam pengembangan')
