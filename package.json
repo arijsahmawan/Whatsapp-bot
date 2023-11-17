@@ -12,6 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "@whiskeysockets/baileys": "^6.5.0",
+    "jimp": "^0.16.13",
+    "link-preview-js": "^3.0.5",
+    "qrcode": "^1.5.3",
     "qrcode-terminal": "^0.12.0"
   }
 }
