@@ -26,10 +26,12 @@ A simple Whatsapp bot with [whiskeysockets/baileys](https://whiskeysockets.githu
 You can choose one
 
 * Connect the whtsapp bot using qr code
+  
    ```
    node index.js
    ```
 * connect the bot using Pairing code
+  
    ```
    node index.js --useCode
    ```
