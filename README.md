@@ -7,6 +7,7 @@ A simple Whatsapp bot with [whiskeysockets/baileys](https://whiskeysockets.githu
 1. Clone the repo
    ```sh
    git clone https://github.com/arijsahmawan/whatsapp-bot.git
+   cd whatsapp-bot
    ```
 2. Install the framework
 
@@ -30,8 +31,9 @@ You can choose one
    ```
    node index.js
    ```
-* connect the bot using Pairing code
+* connect the whatsapp bot using Pairing code
   
    ```
    node index.js --useCode
    ```
+## Feature
