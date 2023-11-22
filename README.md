@@ -19,7 +19,7 @@ A simple Whatsapp bot create with Nodejs using [whiskeysockets/baileys](https://
    ```sh
    yarn add whiskeysockets/baileys
    ```
-3. Enter your phone number in `phone_number.json` if you want to connect the bot using Pairing code
+3. Enter your phone number in `data.json` if you want to connect the bot using Pairing code
    ```json
    "pNumber": "ENTER YOUR PHONE NUMBER"
    ``` 
