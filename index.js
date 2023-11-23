@@ -126,13 +126,7 @@ async function connectToWhatsapp(){
 			for(let i = 1; i <= msgbody.split(" ")[rng-1]; i++){
 				sendMsg(txtmsg)
 			}
-			break;
-		case '.ytmp4' :
-			break;
-			
-		case '.ytmp3' :
-			break;
-			
+			break; 
 		case '.qr' :
 			const _link = msgbody.split(' ').filter( (x,y) => y > 0 && y < msgbody.split(' ').length).join(' ')
 			function filename(){
@@ -231,7 +225,13 @@ async function connectToWhatsapp(){
             	await sock.sendMessage(msgId, mentionedMessage);
 			}
 			tag()
-			
+			break;
+		case ".tag" :
+		  const mentionMsg = sock.sendMessage( id, {
+		    text: "@"+msgId.split("@")[0],
+		    mentions: [msgid]
+		  })
+		  break;
 		default:
 			return;
 	}
