@@ -207,29 +207,36 @@ async function connectToWhatsapp(){
 		
 		case '.everyone' :
 			async function tag(){
-				const participants = await sock.groupMetadata(msgId);
-	            // Membuat array mention untuk setiap anggota grup
-            	const mentions = participants.participants.map(participant => ({
-                	"id": participant.jid,
-                	"notify": participant.notify || participant.jid,
-	                "type": "participant"
-            	}));
-				console.log(participants)
-				console.log(mentions)
-	            // Membuat pesan dengan mention untuk semua anggota
-            	const mentionedMessage = {
-                	text: 'Halo semua!',
-                	mentions
-	            };
-            	// Mengirim pesan dengan mention ke grup
-            	await sock.sendMessage(msgId, mentionedMessage);
+				var participant = await sock.groupMetadata(msgId);
+				console.log(participant.participants[0].id)
+				var parLen = participant.participants.length;
+				var tagEveryone = []
+				var men = []
+				for(let i = 0; i < parLen; i++){
+					var serialized = participant.participants[i].id.split('@')[0]
+					// tagEveryone += `@${serialized}, `
+					// men += `${serialized}@s.whatsapp.net, `
+
+					const mentionMsg = await  sock.sendMessage( msgId, {
+			    	text: `@${serialized}`,
+		    		mentions: [`${serialized}@s.whatsapp.net`]})
+					}
+
+				console.log(tagEveryone)
+				console.log(men)
+
+				//reply(tagEveryone)
+
+				const mentionMsg = await  sock.sendMessage( msgId, {
+		    text: [tagEveryone],
+		    mentions: [men]})
 			}
 			tag()
 			break;
 		case ".tag" :
-		  const mentionMsg = sock.sendMessage( id, {
-		    text: "@"+msgId.split("@")[0],
-		    mentions: [msgid]
+		  const mentionMsg = sock.sendMessage( msgId, {
+		    text: ['@6285793613286', '@6285523926102'],
+		    mentions: ['6285793613286@s.whatsapp.net', '6285523926102@s.whatsapp.net']
 		  })
 		  break;
 		default:
