@@ -209,36 +209,29 @@ async function connectToWhatsapp(){
 			async function tag(){
 				var participant = await sock.groupMetadata(msgId);
 				console.log(participant.participants[0].id)
-				var parLen = participant.participants.length;
-				var tagEveryone = []
-				var men = []
-				for(let i = 0; i < parLen; i++){
-					var serialized = participant.participants[i].id.split('@')[0]
-					// tagEveryone += `@${serialized}, `
-					// men += `${serialized}@s.whatsapp.net, `
+				var participantLength = participant.participants.length;
+				// Array untuk menyimpan tag dan mention
+				var mentions = [];
 
-					const mentionMsg = await  sock.sendMessage( msgId, {
-			    	text: `@${serialized}`,
-		    		mentions: [`${serialized}@s.whatsapp.net`]})
-					}
+				for (let i = 0; i < participantLength; i++) {
+				  var serialized = participant.participants[i].id.split('@')[0];
+				  mentions.push({
+				    tag: `@${serialized}`,
+				    mention: `${serialized}@s.whatsapp.net`
+				  });
+				}
 
-				console.log(tagEveryone)
-				console.log(men)
+				// Gabungkan tag dan mention menjadi satu pesan
+				var messageText = mentions.map(mention => mention.tag).join(' ');
 
-				//reply(tagEveryone)
-
-				const mentionMsg = await  sock.sendMessage( msgId, {
-		    text: [tagEveryone],
-		    mentions: [men]})
+				// Kirim pesan
+				const mentionMsg = await sock.sendMessage(msgId, {
+				  text: messageText,
+				  mentions: mentions.map(mention => mention.mention)
+				});
 			}
 			tag()
 			break;
-		case ".tag" :
-		  const mentionMsg = sock.sendMessage( msgId, {
-		    text: ['@6285793613286', '@6285523926102'],
-		    mentions: ['6285793613286@s.whatsapp.net', '6285523926102@s.whatsapp.net']
-		  })
-		  break;
 		default:
 			return;
 	}
